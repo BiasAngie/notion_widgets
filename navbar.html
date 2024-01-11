@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 	<!-- Google Font -->
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@500&display=swap" rel="stylesheet">
@@ -20,6 +21,7 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 		}
+
 
 		.navMenu {
 			font-family: 'Sometype Mono', monospace;
@@ -43,9 +45,11 @@
 
 		.border {
 			border: 0px solid #cccccc;
+
 		}
 
 		.navMenu a:hover {
+
 			color: #FFFFFF;
 		}
 	</style>
@@ -56,18 +60,69 @@
 	<nav class="navMenu  border background">
 		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house-chimney fa-lg" style="color: #255f63;"></i> Home</a>
 		<a id="projets" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-briefcase fa-lg" style="color: #255f63;"></i> Projets</a>
-		<!-- Agrega los demás enlaces aquí -->
+		<a id="suivi-objectifs" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-star fa-lg" style="color: #255f63;"></i> Suivi des Objectifs</a>
+		<a id="tâches" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-square-check fa-lg" style="color: #255f63;"></i> Tâches</a>
+		<a id="courses" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-basket-shopping fa-lg" style="color: #255f63;"></i> Courses</a>
+		<a id="planning-repas" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-utensils fa-lg" style="color: #255f63;"></i> Repas</a>
+		<a id="administration" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-file-lines fa-lg" style="color: #255f63;"></i> Administration</a>
+		<a id="voiture" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-car-side fa-lg" style="color: #255f63;"></i> Voiture</a>
+		<a id="finances" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-piggy-bank fa-lg" style="color: #255f63;"></i> Finances</a>
+		<a id="évènements" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-days fa-lg" style="color: #255f63;"></i> Évènements</a>
+		<a id="voyages" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-location-dot fa-lg" style="color: #255f63;"></i> Voyages</a>
+		<a id="films-series" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-video fa-lg" style="color: #255f63;"></i> Films/Séries</a>
+		<a id="jds" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-dice fa-lg" style="color: #255f63;"></i> Jeux de société</a>
+		<a id="notes" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart fa-lg" style="color: #255f63;"></i> Notes</a>
+		
+	
+
+
+
+
+
 	</nav>
 
+
 	<script>
+
+		let direction = "vertical";
+		if (direction === "vertical") {
+			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+		}
+
+
 		function navigate(id) {
+
 			if (id == 'home')
 				window.location.href = "https://www.notion.so/Home-J-A-39ebf943cbe7406a85af99fc16be3ca5";
 			else if (id == 'projets')
 				window.location.href = "https://www.notion.so/Projets-3d40b58b4ea040e7bc802c61a305fcf6";
-			// Agrega el resto de las condiciones aquí
+			else if (id == 'suivi-objectifs')
+				window.location.href = "https://www.notion.so/Suivi-des-Objectifs-46aee1115c6d42d9a8021935c54d118b";
+			else if (id == 'tâches')
+				window.location.href = "https://www.notion.so/T-ches-e33dd0c9e17c4fd4984dc339cb03ff75";
+			else if (id == 'courses')
+				window.location.href = "https://www.notion.so/Courses-6db4ea329417482d9f0094b5f6eaf8df";
+			else if (id == 'planning-repas')
+				window.location.href = "https://www.notion.so/Planning-Repas-c055741ddcdd438984dfd308ed662e3e";
+			else if (id == 'administration')
+				window.location.href = "https://www.notion.so/Administration-95c92f5be4e9416a9893f53055edb4b6";
+			else if (id == 'voiture')
+				window.location.href = "https://www.notion.so/Voiture-c72651093dbc418498380cf6d0614604";
+			else if (id == 'finances')
+				window.location.href = "https://www.notion.so/Finances-7dce445b3a7d439f97830cf1176c093d";
+			else if (id == 'évènements')
+				window.location.href = "https://www.notion.so/v-nements-3cb323f482aa4bfbb0e56d91d3a44f67";
+			else if (id == 'voyages')
+				window.location.href = "https://www.notion.so/Voyages-3a8184b5acf14be79acbe63dacc544be";
+			else if (id == 'films-series')
+				window.location.href = "https://www.notion.so/Films-S-ries-96e783768e8446baa87c6899f66b78e8";
+			else if (id == 'jds')
+				window.location.href = "https://www.notion.so/Jeux-de-soci-t-09b1b88b36ee4f0c9514d8e850817a67";
+			else if (id == 'notes')
+				window.location.href = "https://www.notion.so/Notes-99b63c483d46421588074d988d3712de";
 		}
 	</script>
+
 
 </body>
 
