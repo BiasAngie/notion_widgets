@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: transparent; /* Fondo transparente */
+            color: #255f63;
+        }
+
+        #cronometro {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #botones {
+            display: flex;
+        }
+
+        button {
+            font-size: 18px;
+            margin: 0 10px;
+            padding: 10px;
+            background-color: #ecb767;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #255f63;
+        }
+    </style>
+</head>
+<body>
+    <div id="cronometro">00:00:00</div>
+    <div id="botones">
+        <button onclick="startCronometro()">Iniciar</button>
+        <button onclick="stopCronometro()">Detener</button>
+        <button onclick="resetCronometro()">Reiniciar</button>
+    </div>
+
+    <script>
+        var cronometroInterval;
+        var segundos = 0, minutos = 0, horas = 0;
+
+        function startCronometro() {
+            stopCronometro(); // Detener antes de iniciar para evitar múltiples intervalos
+            cronometroInterval = setInterval(actualizarCronometro, 1000);
+        }
+
+        function stopCronometro() {
+            clearInterval(cronometroInterval);
+        }
+
+        function resetCronometro() {
+            stopCronometro();
+            segundos = 0;
+            minutos = 0;
+            horas = 0;
+            actualizarCronometro();
+        }
+
+        function actualizarCronometro() {
+            segundos++;
+            if (segundos === 60) {
+                segundos = 0;
+                minutos++;
+                if (minutos === 60) {
+                    minutos = 0;
+                    horas++;
+                }
+            }
+
+            var tiempo = formatTiempo(horas) + ':' + formatTiempo(minutos) + ':' + formatTiempo(segundos);
+            document.getElementById('cronometro').innerText = tiempo;
+        }
+
+        function formatTiempo(tiempo) {
+            return tiempo < 10 ? '0' + tiempo : tiempo;
+        }
+    </script>
+</body>
+</html>
